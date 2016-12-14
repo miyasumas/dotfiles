@@ -5,6 +5,7 @@ elif [[ "$(uname)" =~ 'Linux' ]]; then
     OS='Linux'
 else
     echo "Your platform ($(uname -a)) is not supported."
+    exit 0
 fi
 
 # tmux
@@ -14,8 +15,11 @@ if which tmux > /dev/null 2>&1; then
 fi
 
 # PATH
-if [ $OS = "Mac" ]; then
-    export PATH=/usr/local/bin:${PATH//:\/usr\/local\/bin/}
+if [ $OS = "Linux" ]; then
+    BREW_PREFIX="./linuxbrew"
+    export PATH="${BREW_PREFIX}/bin:${BREW_PREFIX}/sbin:${PATH}"
+elif [ $OS = "Mac" ]; then
+    export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
     export JAVA_HOME=$(/usr/libexec/java_home)
 fi
 
@@ -25,17 +29,17 @@ if which rbenv > /dev/null 2>&1; then
 fi
 
 if [ -f "${HOME}/.bashrc" ] ; then
-  source "${HOME}/.bashrc"
+    source "${HOME}/.bashrc"
 fi
 
 if [ -d "${HOME}/bin" ] ; then
-  PATH="${HOME}/bin:${PATH}"
+    PATH="${HOME}/bin:${PATH}"
 fi
 
 if [ -d "${HOME}/man" ]; then
-  MANPATH="${HOME}/man:${MANPATH}"
+    MANPATH="${HOME}/man:${MANPATH}"
 fi
 
 if [ -d "${HOME}/info" ]; then
-  INFOPATH="${HOME}/info:${INFOPATH}"
+    INFOPATH="${HOME}/info:${INFOPATH}"
 fi
