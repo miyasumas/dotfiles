@@ -7,6 +7,7 @@ alias vi=vim
 
 # bash history
 export HISTTIMEFORMAT='[%F %T] '
+export PS1='[\u@\h \w]$ '
 
 # bash completion
 if [ -d "$(brew --prefix)/etc/bash_completion.d" ]; then
@@ -18,6 +19,8 @@ fi
 # git prompt
 if [ -f "$(brew --prefix git)/etc/bash_completion.d/git-prompt.sh" ]; then
     source "$(brew --prefix git)/etc/bash_completion.d/git-prompt.sh"
+    GIT_PS1_SHOWDIRTYSTATE=true
+    export PS1='[\u@\h \w]$(__git_ps1)$ '
 fi
 
 # git completion
@@ -25,8 +28,3 @@ if [ -f "$(brew --prefix git)/etc/bash_completion.d/git-completion.bash" ]; then
     source "$(brew --prefix git)/etc/bash_completion.d/git-completion.bash"
 fi
 
-# PROMPT
-if which __git_ps1 > /dev/null 2>&1; then
-    GIT_PS1_SHOWDIRTYSTATE=true
-    export PS1='[\u@\h \w]$(__git_ps1)$ '
-fi
