@@ -28,3 +28,8 @@ if [ -f "$(brew --prefix git)/etc/bash_completion.d/git-completion.bash" ]; then
     source "$(brew --prefix git)/etc/bash_completion.d/git-completion.bash"
 fi
 
+# gcloud
+if [ -f "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk" ]; then
+    source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc"
+    source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc"
+fi
