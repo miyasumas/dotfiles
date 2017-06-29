@@ -36,3 +36,6 @@ fi
 
 # direnv
 eval "$(direnv hook bash)"
+
+# github
+eval "$(hub alias -s)"
