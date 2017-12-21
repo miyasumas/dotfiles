@@ -39,3 +39,6 @@ eval "$(direnv hook bash)"
 
 # github
 eval "$(hub alias -s)"
+
+# launchpad
+alias resetlaunchpad='defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock'
