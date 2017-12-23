@@ -19,8 +19,8 @@ if [ $OS = "Linux" ]; then
     BREW_PREFIX="./linuxbrew"
     export PATH="${BREW_PREFIX}/bin:${BREW_PREFIX}/sbin:${PATH}"
 elif [ $OS = "Mac" ]; then
-    export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
-    export JAVA_HOME=$(/usr/libexec/java_home)
+    export JAVA_HOME=$(/usr/libexec/java_home -v '1.8')
+    export PATH="/usr/local/bin:/usr/local/sbin:${JAVA_HOME}/bin:${PATH}"
 fi
 
 # Ruby
