@@ -8,6 +8,9 @@ else
     exit 0
 fi
 
+# editor
+export EDITOR=vim
+
 # tmux
 if which tmux > /dev/null 2>&1; then
     alias tmux='rm -rf /tmp/tmux* && tmux'
@@ -21,6 +24,12 @@ if [ $OS = "Linux" ]; then
 elif [ $OS = "Mac" ]; then
     export JAVA_HOME=$(/usr/libexec/java_home -v '1.8')
     export PATH="/usr/local/bin:/usr/local/sbin:${JAVA_HOME}/bin:${PATH}"
+fi
+
+# Go
+export PATH=$PATH:$GOPATH/bin
+if which goenv > /dev/null 2>&1; then
+    eval "$(goenv init -)"
 fi
 
 # Ruby
