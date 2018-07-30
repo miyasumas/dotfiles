@@ -44,6 +44,11 @@ if which pyenv > /dev/null 2>&1; then
     eval "$(pyenv init -)"
 fi
 
+# node
+if which nodebrew > /dev/null 2>&1; then
+	export PATH="$HOME/.nodebrew/current/bin:$PATH"
+fi
+
 if [ -f "${HOME}/.bashrc" ] ; then
     source "${HOME}/.bashrc"
 fi
