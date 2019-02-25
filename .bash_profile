@@ -27,6 +27,7 @@ elif [ $OS = "Mac" ]; then
 fi
 
 # Go
+export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
 if which goenv > /dev/null 2>&1; then
     eval "$(goenv init -)"
