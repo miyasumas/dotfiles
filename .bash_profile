@@ -12,10 +12,10 @@ fi
 export EDITOR=vim
 
 # tmux
-if which tmux > /dev/null 2>&1; then
-    alias tmux='rm -rf /tmp/tmux* && tmux'
-    test -z ${TMUX} && tmux > /dev/null 2>&1
-fi
+#if which tmux > /dev/null 2>&1; then
+#    alias tmux='rm -rf /tmp/tmux* && tmux'
+#    test -z ${TMUX} && tmux > /dev/null 2>&1
+#fi
 
 # PATH
 if [ $OS = "Linux" ]; then
