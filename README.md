@@ -1,17 +1,25 @@
 # dotfiles
 
-## Installation
+## Install Homebrew
 
 ```bash
-git clone git@github.com:miyasumas/dotfiles.git
-./dotfiles/setup.sh
+$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-## Homebrew
+## Setup and install applications
 
 ```bash
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-cd dotfiles
-sudo brew brewdle
+$ git clone git@github.com:miyasumas/dotfiles.git
+$ cd dotfiles
+$ ./setup.sh
+$ brew bundle
+```
+
+## Reinstall applications
+
+```bash
+$ cd dotfiles
+$ brew bundle
+$ brew bundle cleanup
 ```
 
