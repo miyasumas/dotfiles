@@ -27,11 +27,13 @@ elif [ $OS = "Mac" ]; then
 fi
 
 # Go
-export GOPATH=$HOME/.go
-export PATH=$PATH:$GOPATH/bin
+export GOPATH="$HOME/.go"
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
 if which goenv > /dev/null 2>&1; then
     eval "$(goenv init -)"
 fi
+export PATH="$GOROOT/bin:$PATH:$GOPATH/bin"
 
 # Ruby
 if which rbenv > /dev/null 2>&1; then
