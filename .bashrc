@@ -38,4 +38,4 @@ fi
 eval "$(direnv hook bash)"
 
 # launchpad
-alias resetlpad='defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock'
+alias rlp='defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock'
