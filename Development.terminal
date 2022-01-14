@@ -75,7 +75,7 @@
 	<key>WindowTitle</key>
 	<string>ターミナル</string>
 	<key>columnCount</key>
-	<integer>240</integer>
+	<integer>200</integer>
 	<key>name</key>
 	<string>Development</string>
 	<key>rowCount</key>
