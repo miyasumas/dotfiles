@@ -52,6 +52,9 @@ if which nodebrew > /dev/null 2>&1; then
 	export PATH="$HOME/.nodebrew/current/bin:$PATH"
 fi
 
+# MySQL
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+
 if [ -f "${HOME}/.bashrc" ] ; then
     source "${HOME}/.bashrc"
 fi
@@ -67,3 +70,7 @@ fi
 if [ -d "${HOME}/info" ]; then
     INFOPATH="${HOME}/info:${INFOPATH}"
 fi
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
