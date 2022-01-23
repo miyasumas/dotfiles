@@ -26,32 +26,6 @@ elif [ $OS = "Mac" ]; then
     export PATH="/usr/local/bin:/usr/local/sbin:${JAVA_HOME}/bin:${PATH}"
 fi
 
-# Go
-export GOPATH="$HOME/.go"
-export GOENV_ROOT="$HOME/.goenv"
-export PATH="$GOENV_ROOT/bin:$PATH"
-if which goenv > /dev/null 2>&1; then
-    eval "$(goenv init -)"
-fi
-export PATH="$GOROOT/bin:$PATH:$GOPATH/bin"
-
-# Ruby
-if which rbenv > /dev/null 2>&1; then
-    eval "$(rbenv init -)"
-fi
-
-# Python
-if which pyenv > /dev/null 2>&1; then
-    export PYENV_ROOT="$HOME/.pyenv"
-    export PATH="$PYENV_ROOT/bin:$PATH"
-    eval "$(pyenv init -)"
-fi
-
-# node
-if which nodebrew > /dev/null 2>&1; then
-	export PATH="$HOME/.nodebrew/current/bin:$PATH"
-fi
-
 # MySQL
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
