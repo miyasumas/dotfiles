@@ -2,7 +2,7 @@
 
 BASEDIR=`pwd`
 BACKUP_DIR=$BASEDIR/backup/`date +'%Y%m%d%H%M%S'`
-DOTFILES=(".vimrc" ".bashrc" ".bash_profile" ".profile" ".inputrc" ".tmux.conf")
+DOTFILES=(".vimrc" ".bashrc" ".bash_profile" ".profile" ".inputrc" ".tmux.conf", ".gitconfig")
 
 for f in ${DOTFILES[@]}; do
 	if [ ! -L ~/$f ]; then
