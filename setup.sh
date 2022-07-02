@@ -2,16 +2,16 @@
 
 BASEDIR=`pwd`
 BACKUP_DIR=$BASEDIR/backup/`date +'%Y%m%d%H%M%S'`
-DOTFILES=(".vimrc" ".bashrc" ".bash_profile" ".profile" ".inputrc" ".tmux.conf", ".gitconfig")
+DOTFILES=("vimrc" "bashrc" "bash_profile" "profile" "inputrc" "tmux.conf" "gitconfig")
 
 for f in ${DOTFILES[@]}; do
-	if [ ! -L ~/$f ]; then
+	if [ ! -L ~/.$f ]; then
 		if [ ! -d $BACKUP_DIR ]; then
 			mkdir -p $BACKUP_DIR
 		fi
-		mv ~/$f $BACKUP_DIR
+		mv ~/.$f $BACKUP_DIR
 	else
-		rm -f ~/$f
+		rm -f ~/.$f
 	fi
-	ln -sv $BASEDIR/$f ~/$f
+	ln -sv $BASEDIR/$f ~/.$f
 done
