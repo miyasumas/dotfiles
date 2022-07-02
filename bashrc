@@ -2,8 +2,19 @@
 [[ "$-" != *i* ]] && return
 
 # Alias
-alias ls='ls -G'
-alias vi=vim
+alias date='gdate'
+alias ls='gls -G'
+alias mkdir='gmkdir'
+alias rm='grm'
+alias du='gdu'
+alias head='ghead'
+alias tail='gtail'
+alias sed='gsed'
+alias grep='ggrep'
+alias find='gfind'
+alias dirname='gdirname'
+alias xargs='gxargs'
+alias vi='vim'
 
 # bash history
 export HISTTIMEFORMAT='[%F %T] '
