@@ -15,3 +15,9 @@ for f in ${DOTFILES[@]}; do
 	fi
 	ln -sv $BASEDIR/$f ~/.$f
 done
+
+XDG_CONFIG_HOME=~/.config
+mkdir -p $XDG_CONFIG_HOME
+ln -svf "$BASEDIR/config/"* $XDG_CONFIG_HOME
+
+
