@@ -2,7 +2,7 @@
 
 BASEDIR=`pwd`
 BACKUP_DIR=$BASEDIR/.backup/`date +'%Y%m%d%H%M%S'`
-DOTFILES=("bashrc" "bash_profile" "profile" "inputrc")
+DOTFILES=("bashrc" "bash_profile" "profile")
 
 for f in ${DOTFILES[@]}; do
 	if [ ! -L ~/.$f ]; then

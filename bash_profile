@@ -11,6 +11,9 @@ fi
 # editor
 export EDITOR=vim
 
+# readline
+export INPUTRC=".config/readline/inputrc"
+
 # tmux
 #if which tmux > /dev/null 2>&1; then
 #    alias tmux='rm -rf /tmp/tmux* && tmux'
