@@ -2,7 +2,7 @@
 
 BASEDIR=`pwd`
 BACKUP_DIR=$BASEDIR/.backup/`date +'%Y%m%d%H%M%S'`
-DOTFILES=("vimrc" "bashrc" "bash_profile" "profile" "inputrc" "tmux.conf" "gitconfig")
+DOTFILES=("bashrc" "bash_profile" "profile" "inputrc")
 
 for f in ${DOTFILES[@]}; do
 	if [ ! -L ~/.$f ]; then
@@ -19,5 +19,5 @@ done
 XDG_CONFIG_HOME=~/.config
 mkdir -p $XDG_CONFIG_HOME
 ln -svf "$BASEDIR/config/"* $XDG_CONFIG_HOME
-
+ln -svfn "$BASEDIR/config/vim" ~/.vim
 
