@@ -17,3 +17,4 @@ ln -svf "$BASEDIR/config/bash/.bashrc" $HOME/.bashrc
 
 # zsh
 ln -svf "$BASEDIR/config/zsh/.zshenv" $HOME/.zshenv
+ln -svf "$BASEDIR/config/zsh/.zshrc" $HOME/.zshrc

@@ -1,11 +1,25 @@
-autoload -Uz colors
-colors
+# path
+typeset -U path
+path=(
+    "/usr/local/{bin,sbin}"
+    $path
+)
 
-# zsh_history
-export HISTFILE="$XDG_STATE_HOME/zsh_history"
+# completion
+typeset -U fpath
+fpath=(
+    "$(brew --prefix)/share/zsh/site-functions"(N-/)
+    "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"(N-/)
+    "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc"(N-/)
+    $fpath
+)
+
+autoload -Uz colors && colors
+autoload -Uz compinit && compinit -u
 
 # prompt
-PROMPT='[%n@%m %~]$ '
+source "$(brew --prefix)/opt/zsh-git-prompt/zshrc.sh"
+PROMPT='[%n@%m %~] $(git_super_status)$ '
 
 # gnu alias
 alias date='gdate'
@@ -22,20 +36,14 @@ alias dirname='gdirname'
 alias xargs='gxargs'
 alias vi='vim'
 
-# gcloud
-if [ -f "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk" ]; then
-    source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc"
-    source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc"
-fi
+# launchpad
+alias rlp='defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock'
 
 # anyenv
 eval "$(anyenv init -)"
 
 # direnv
 eval "$(direnv hook zsh)"
-
-# launchpad
-alias rlp='defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock'
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
