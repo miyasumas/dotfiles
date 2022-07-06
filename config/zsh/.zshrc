@@ -1,7 +1,8 @@
 # path
 typeset -U path
 path=(
-    "/usr/local/{bin,sbin}"
+    "/usr/local/bin"
+    "/usr/local/sbin"
     $path
 )
 
@@ -14,12 +15,23 @@ fpath=(
     $fpath
 )
 
+# color
 autoload -Uz colors && colors
+
+# completion
 autoload -Uz compinit && compinit -u
 
-# prompt
-source "$(brew --prefix)/opt/zsh-git-prompt/zshrc.sh"
-PROMPT='[%n@%m %~] $(git_super_status)$ '
+# git info
+autoload -Uz vcs_info
+setopt prompt_subst
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
+zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
+PROMPT='[%n@%m %~]$ '
+RPROMPT='$vcs_info_msg_0_'
+precmd(){ vcs_info }
 
 # gnu alias
 alias date='gdate'
@@ -39,12 +51,16 @@ alias vi='vim'
 # launchpad
 alias rlp='defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock'
 
+# relogin shell
+alias relogin='exec $SHELL -l'
+
 # anyenv
-eval "$(anyenv init -)"
+eval "$(anyenv init - zsh)"
 
 # direnv
 eval "$(direnv hook zsh)"
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+# sdkman
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
