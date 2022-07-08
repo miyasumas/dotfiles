@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASEDIR=`pwd`
+BASEDIR=`cd $(dirname $0) && pwd`
 XDG_CONFIG_HOME=$HOME/.config
 mkdir -p $XDG_CONFIG_HOME
 
