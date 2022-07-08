@@ -21,3 +21,4 @@ export INPUTRC=".config/readline/inputrc"
 
 # Brew
 export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_BUNDLE_NO_LOCK=1
