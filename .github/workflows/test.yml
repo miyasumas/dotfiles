@@ -1,4 +1,4 @@
-name: Test install
+name: test
 
 on: [push]
 
