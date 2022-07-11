@@ -5,9 +5,21 @@ on: [push]
 jobs:
   test:
     runs-on: macOS-latest
+    defaults:
+      run:
+        shell: bash
     steps:
       - uses: actions/checkout@v3
       - name: Install dotfiles
         run: ./install.sh
-      - name: Check
-        run: brew --version && sdk version && [ -d ~/.config ]
+      - name: Check Homebrew
+        run: "brew --version"
+      - name: Check SDKMAN!
+        run: |
+          source "$HOME/.sdkman/bin/sdkman-init.sh"
+          sdk version
+      - name: Check symlinks
+        run: |
+          if [ ! -d ~/.config ]; then
+            exit 1
+          fi
