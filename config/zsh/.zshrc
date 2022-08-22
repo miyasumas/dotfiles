@@ -3,6 +3,8 @@ typeset -U path
 path=(
     "/usr/local/bin"
     "/usr/local/sbin"
+	"/opt/homebrew/bin"
+	"/opt/homebrew/sbin"
     $path
 )
 

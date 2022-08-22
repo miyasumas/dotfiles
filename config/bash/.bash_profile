@@ -25,7 +25,7 @@ if [ $OS = "Linux" ]; then
     BREW_PREFIX="./linuxbrew"
     export PATH="${BREW_PREFIX}/bin:${BREW_PREFIX}/sbin:${PATH}"
 elif [ $OS = "Mac" ]; then
-    export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
+    export PATH="/usr/local/bin:/usr/local/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:${PATH}"
 fi
 
 # MySQL
