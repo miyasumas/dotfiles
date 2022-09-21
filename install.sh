@@ -21,14 +21,14 @@ function create_symlinks() {
   # XDG Config
   TARGET_DIRS=(git readline tmux karabiner)
   for d in ${TARGET_DIRS[@]}; do
-	TARGET_DIR=$BASEDIR/config/$d
-	if [ ! -d $TARGET_DIR ]; then
-	  echo "Not found: $TARGET_DIR"
-	  continue
-	fi
-	CONFIG_DIR=$XDG_CONFIG_HOME/$d
-	mkdir -p $CONFIG_DIR
-	ln -svfn "$TARGET_DIR"/* $CONFIG_DIR
+    TARGET_DIR=$BASEDIR/config/$d
+    if [ ! -d $TARGET_DIR ]; then
+      echo "Not found: $TARGET_DIR"
+      continue
+    fi
+    CONFIG_DIR=$XDG_CONFIG_HOME/$d
+    mkdir -p $CONFIG_DIR
+    ln -svfn "$TARGET_DIR"/* $CONFIG_DIR
   done
 
   # vim
