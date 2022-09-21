@@ -18,8 +18,19 @@ function create_symlinks() {
   XDG_CONFIG_HOME=$HOME/.config
   mkdir -p $XDG_CONFIG_HOME
 
-  # XDG Base Directory Specification
-  ln -svf "$BASEDIR/config/"* $XDG_CONFIG_HOME
+  # git
+  ln -svf "$BASEDIR/config/git" $XDG_CONFIG_HOME
+
+  # readline
+  ln -svf "$BASEDIR/config/readline" $XDG_CONFIG_HOME
+
+  # tmux
+  ln -svf "$BASEDIR/config/tmux" $XDG_CONFIG_HOME
+
+  # karabiner
+  KARABINER_CONFIG_DIR=$XDG_CONFIG_HOME/karabiner
+  mkdir -p $KARABINER_CONFIG_DIR
+  ln -svf "$BASEDIR/config/karabiner/"* $KARABINER_CONFIG_DIR
 
   # vim
   ln -svfn "$BASEDIR/config/vim" $HOME/.vim
@@ -50,3 +61,4 @@ create_symlinks
 brew bundle --no-lock
 
 popd
+
