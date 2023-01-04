@@ -3,7 +3,8 @@
 	editor = vim
 
 [alias]
-	vacuum = "!f () { git branch --merged|grep -v '*'|xargs git branch -d; git fetch -p; };f"
+	vacuum = "!f () { git branch --merged|grep -v '*'|xargs git branch -d && git fetch -p; };f"
+  backup = "!f () { git branch -c backup/$(git branch --show-current) && git branch; };f"
 
 [merge]
 	conflictStyle = diff3
