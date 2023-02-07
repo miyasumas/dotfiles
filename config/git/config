@@ -1,14 +1,14 @@
 [core]
-	autocrlf = input
-	editor = vim
+  autocrlf = input
+  editor = vim
 
 [alias]
-	vacuum = "!f () { git branch --merged|grep -v '*'|xargs git branch -d && git fetch -p; };f"
+  vacuum = "!f () { git branch --merged|grep -v '*'|xargs git branch -d && git fetch -p; };f"
   backup = "!f () { git branch -c backup/$(git branch --show-current) && git branch; };f"
   track = "!f () { git switch -t origin/$1; };f"
 
 [merge]
-	conflictStyle = diff3
+  conflictStyle = diff3
 
 [user]
-	useConfigOnly = true
+  useConfigOnly = true
