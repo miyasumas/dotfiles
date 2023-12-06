@@ -4,7 +4,7 @@ BASEDIR=`cd $(dirname $0) && pwd`
 
 function install_homebrew() {
   echo "Installing Homebrew..."
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   echo "Installed Homebrew."
 }
 
