@@ -50,3 +50,7 @@ eval "$(direnv hook bash)"
 
 # launchpad
 alias rlp='defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock'
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/yasumasa-miyasaka/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
