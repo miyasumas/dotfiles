@@ -69,9 +69,12 @@ eval "$(anyenv init - zsh)"
 # direnv
 eval "$(direnv hook zsh)"
 
+# asdf
+. "$(brew --prefix asdf)/libexec/asdf.sh"
+
 # sdkman
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+#export SDKMAN_DIR="$HOME/.sdkman"
+#[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)

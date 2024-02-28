@@ -42,6 +42,9 @@ function create_symlinks() {
   # zsh
   ln -svfn "$BASEDIR/config/zsh/.zshenv" $HOME/.zshenv
   ln -svfn "$BASEDIR/config/zsh/.zshrc" $HOME/.zshrc
+
+  # asdf
+  ln -svfn "$BASEDIR/config/asdf/.asdfrc" $HOME/.asdfrc
 }
 
 # Move work directory
